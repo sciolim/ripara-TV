@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Schede TV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Intestazione con sfondo carino -->
+        <div class="header">
+            <h1>Gestione Schede TV</h1>
+            <p class="slogan">Gestisci in modo semplice le tue riparazioni TV</p>
+            <p class="copyright">Creato da Mario Scioli</p>
+        </div>
+
+        <!-- Form con sfondi diversi per ogni campo -->
+        <form id="schedaForm">
+            <div class="form-group bg-marca">
+                <label for="marca">Marca TV:</label>
+                <input type="text" id="marca" placeholder="Inserisci marca" required>
+            </div>
+
+            <div class="form-group bg-tipo-scheda">
+                <label for="tipoScheda">Tipo di Scheda:</label>
+                <input type="text" id="tipoScheda" placeholder="Inserisci tipo di scheda" required>
+            </div>
+
+            <div class="form-group bg-pollici">
+                <label for="pollici">Pollici TV:</label>
+                <input type="number" id="pollici" placeholder="Inserisci pollici" required>
+            </div>
+
+            <div class="form-group bg-quantita">
+                <label for="quantita">Quantità:</label>
+                <input type="number" id="quantita" placeholder="Inserisci quantità" required>
+            </div>
+
+            <div class="form-group bg-posizione">
+                <label for="posizione">Posizione:</label>
+                <input type="text" id="posizione" placeholder="Inserisci posizione" required>
+            </div>
+
+            <button type="submit">Aggiungi Scheda</button>
+        </form>
+
+        <!-- Tabella delle schede -->
+        <h2>Schede Inserite</h2>
+        <div class="actions">
+            <button id="exportCSV" class="export-button">Esporta in CSV</button>
+            <button id="exportJSON" class="export-button">Esporta in JSON</button>
+            <button id="importJSON" class="import-button">Importa da JSON</button>
+            <button id="stampaLista" class="stampa-button">Stampa Lista</button>
+        </div>
+        <table id="schedaTable">
+            <thead>
+                <tr>
+                    <th>Marca TV</th>
+                    <th>Tipo di Scheda</th>
+                    <th>Pollici TV</th>
+                    <th>Quantità</th>
+                    <th>Posizione</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Le schede verranno aggiunte qui dinamicamente -->
+            </tbody>
+        </table>
+
+        <!-- Finestra di testo per visualizzare i dati JSON -->
+        <div id="jsonViewer" class="hidden">
+            <h3>Dati JSON</h3>
+            <textarea id="jsonContent" readonly></textarea>
+            <button id="closeJsonViewer">Chiudi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
